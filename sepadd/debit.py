@@ -177,6 +177,7 @@ class SepaDD(object):
         Build the main document node and set xml namespaces.
         """
         self._xml = ET.Element("Document")
+        self._xml.set("xsi:schemaLocation", "urn:iso:std:iso:20022:tech:xsd:" + self.schema)
         self._xml.set("xmlns",
                       "urn:iso:std:iso:20022:tech:xsd:" + self.schema)
         self._xml.set("xmlns:xsi",
